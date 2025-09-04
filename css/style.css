@@ -1,0 +1,329 @@
+/* Global Variables */
+:root {
+	--primary-color: #2e7d32;
+	--primary-hover-color: #27632a;
+	--border-color: #ddd;
+	--footer-color: #333;
+	--transition-duration: 0.3s;
+}
+
+/* Reset and Base Style */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: roboto, Arial;
+}
+a {
+	text-decoration: none;
+	color: #333;
+}
+ul {
+	list-style: none;
+}
+
+/* Button */
+.btn {
+	padding: 8px 16px;
+	outline: none;
+	border: none;
+	background-color: var(--primary-color);
+	cursor: pointer;
+	color: white;
+	transition: var(--transition-duration) background-color;
+	border-radius: 8px;
+}
+.btn:hover {
+	background-color: var(--primary-hover-color);
+}
+
+/* Container */
+.container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* SECTION */
+section {
+	padding: 4rem 0;
+}
+section h2 {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+/* PRODUCTS LIST */
+.products-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+}
+@media (max-width: 767px) {
+	.products-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width: 575px) {
+	.products-list {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* PRODUCT CARD */
+.product-card {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	border: 1px solid var(--border-color);
+	border-radius: 1rem;
+	transition: var(--transition-duration) box-shadow;
+}
+.product-card .info {
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.product-card:hover {
+	box-shadow: 0 0 15px -2px var(--primary-hover-color);
+}
+.product-card img {
+	height: 200px;
+	object-fit: cover;
+}
+.product-card p {
+	color: var(--primary-color);
+}
+
+/* HEADER */
+header {
+	padding: 16px;
+	position: sticky;
+	z-index: 9999;
+	top: 0;
+	background-color: white;
+	border-bottom: 1px solid var(--border-color);
+}
+header > div.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+header > div.container h1 a {
+	color: var(--primary-color);
+}
+header > div.container .nav-cart {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+
+/* HEADER > NAV BAR */
+header > div.container .nav-cart .nav-icon {
+	display: none;
+}
+header > div.container .nav-cart nav ul {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+header > div.container .nav-cart nav ul li a {
+	position: relative;
+	font-weight: 500;
+	transition: var(--transition-duration) color;
+}
+@media (max-width: 767px) {
+	header > div.container .nav-cart nav {
+		display: none;
+	}
+	header > div.container .nav-cart .nav-icon {
+		display: block;
+	}
+	header > div.container .nav-cart #nav-toggle:checked + nav {
+		display: block;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background-color: white;
+		border-bottom-left-radius: 1rem;
+		border-bottom-right-radius: 1rem;
+		height: auto;
+		border: 2px solid var(--border-color);
+		border-top-width: 1px;
+	}
+	header > div.container .nav-cart #nav-toggle:checked + nav ul {
+		flex-direction: column;
+		align-items: stretch;
+		text-align: center;
+	}
+	header > div.container .nav-cart #nav-toggle:checked + nav ul li a {
+		display: inline-block;
+		width: 100%;
+		padding: 16px 0;
+	}
+}
+header > div.container .nav-cart nav ul li a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	width: 0;
+	height: 2px;
+	background-color: var(--primary-hover-color);
+	transition: var(--transition-duration) width;
+}
+header > div.container .nav-cart nav ul li a:hover {
+	color: var(--primary-hover-color);
+}
+header > div.container .nav-cart nav ul li a:hover::after {
+	width: 100%;
+}
+header > div.container .nav-cart nav ul li a.active {
+	color: var(--primary-color);
+}
+header > div.container .nav-cart nav ul li a.active::after {
+	width: 100%;
+}
+
+/* HERO */
+.hero {
+	padding: 2rem;
+	background-image: url("/assets/images/hero.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 70dvh;
+	color: white;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: rgb(0 0 0 / 0.4);
+}
+
+.hero > div {
+	position: relative;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	align-items: center;
+}
+
+.hero > div h1 {
+	font-size: 3rem;
+}
+@media (max-width: 767px) {
+	.hero > div h1 {
+		font-size: 2rem;
+	}
+}
+
+/* ABOUT */
+.about-img {
+	width: 100%;
+	height: 60dvh;
+	background-image: url("/assets/images/resturante.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+/* CONTACT */
+.contact-section {
+	height: 80dvh;
+}
+
+.contact-section form {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.contact-section form > div {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.contact-section form > div label {
+	font-weight: 500;
+}
+
+.contact-section form > div input,
+.contact-section form > div textarea {
+	padding: 8px 18px;
+	border-radius: 8px;
+	border: 1px solid var(--primary-color);
+	min-width: 240px;
+}
+.contact-section form > div input:focus,
+.contact-section form > div textarea:focus {
+	outline: 1px solid var(--primary-hover-color);
+}
+/* FOOTER */
+footer {
+	background-color: var(--footer-color);
+	padding: 16px;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+}
+footer .social-media {
+	display: flex;
+	gap: 16px;
+}
+footer .social-media a {
+	color: white;
+	transition: var(--transition-duration) background-color;
+	display: inline-block;
+	padding: 4px;
+	border-radius: 50%;
+	background-color: rgb(255 255 255 / 0.1);
+}
+footer .social-media a:hover {
+	background-color: var(--primary-hover-color);
+}
+
+footer .contact-info h3 {
+	margin-bottom: 12px;
+	text-align: center;
+	position: relative;
+}
+
+footer .contact-info h3::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -4px;
+	width: 100%;
+	height: 2px;
+	background-color: var(--primary-color);
+}
+
+footer .contact-info ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+}
+
+footer .copy-right {
+	align-self: stretch;
+	text-align: center;
+	padding: 8px;
+	border-top: 1px solid var(--border-color);
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Snackify - Contact</title>
+		<meta
+			name="description"
+			content="At Snackify, we believe in providing the highest
+				quality food and beverages sourced from local farmers and trusted
+				suppliers. Our mission is to make healthy, delicious food accessible to
+				everyone. Founded in 2020, we've grown from a small local shop to
+				a trusted online retailer serving customers across the country. We're
+				committed to sustainability, quality, and excellent customer service."
+		/>
+		<!-- FONT Awesome Libary -->
+		<link rel="stylesheet" href="assets/icons/font-awesome-css/all.min.css" />
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Website stylesheet -->
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<!-- HEADER -->
+		<header>
+			<div class="container">
+				<!-- LOGO -->
+				<h1><a href="/">Snackify</a></h1>
+				<div class="nav-cart">
+					<!-- NAVIGATION BAR -->
+					<label for="nav-toggle"
+						><i class="fa-solid fa-bars nav-icon"></i
+					></label>
+					<input type="checkbox" id="nav-toggle" hidden />
+					<nav>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/products.html">Products</a></li>
+							<li><a href="/about.html">About Us</a></li>
+							<li><a href="/contact.html" class="active">Contact</a></li>
+						</ul>
+					</nav>
+					<!-- CART -->
+					<i class="fa-solid fa-cart-shopping"></i>
+				</div>
+			</div>
+		</header>
+
+		<section class="container contact-section">
+			<h2>Contact Us</h2>
+			<form>
+				<div>
+					<label for="name">Name:</label>
+					<input type="text" id="name" placeholder="Name" />
+				</div>
+				<div>
+					<label for="email">Email:</label>
+					<input type="email" id="email" placeholder="Email" />
+				</div>
+				<div>
+					<label for="message">Message:</label>
+					<textarea id="message" placeholder="Message" rows="5"></textarea>
+				</div>
+				<button type="submit" class="btn">Submit</button>
+			</form>
+		</section>
+		<!-- FOOTER -->
+		<footer>
+			<!-- SOCAIL MEDIA ICONS -->
+			<div class="social-media">
+				<a
+					href="#"
+					aria-label="Snackify on Facebook"
+				>
+					<i class="fa-brands fa-facebook" aria-hidden="true"></i>
+				</a>
+				<a
+					href="#"
+					aria-label="Snackify on Instagram"
+				>
+					<i class="fa-brands fa-instagram" aria-hidden="true"></i>
+				</a>
+				<a href="#" aria-label="Snackify on Twitter">
+					<i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+				</a>
+			</div>
+			<!-- CONTACT INFO -->
+			<div class="contact-info">
+				<h3>Contact</h3>
+				<ul>
+					<li>
+						<i class="fa-solid fa-location-dot"></i> 123 Food Street, New York,
+						NY
+					</li>
+					<li><i class="fa-solid fa-phone"></i> +1 (234) 567-8900</li>
+					<li><i class="fa-solid fa-envelope"></i> info@freshbites.com</li>
+				</ul>
+			</div>
+			<!-- COPY RIGHT -->
+			<div class="copy-right">
+				<p>© 2025 Snackify. All rights reserved.</p>
+			</div>
+		</footer>
+	</body>
+</html>
