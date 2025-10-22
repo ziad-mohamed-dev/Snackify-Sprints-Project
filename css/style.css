@@ -193,7 +193,7 @@ header > div.container .nav-cart nav ul li a.active::after {
 /* HERO */
 .hero {
 	padding: 2rem;
-	background-image: url("/assets/images/hero.jpg");
+	background-image: url("../assets/images/hero.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 70dvh;
